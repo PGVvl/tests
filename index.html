@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДМ ГРУПП</title>
+    <link rel="icon" type="image/svg+xml" href="listlogo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Шапка */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .header img {
+            height: 100px;
+            margin-right: 2%; 
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 39px;
+        }
+
+        /* Основной блок */
+        .content {
+    padding: 150px 50px; /* Оставляем верхний отступ на 100px */
+    max-width: 70%; /* Устанавливаем максимальную ширину контента на 70% */
+    margin: 0 auto; /* Центрируем контент */
+}
+
+        /* Подвал */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer img {
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .footer div {
+            margin: 10px 0;
+        }
+        .content-section {
+        display: flex;
+        align-items: stretch; /* Заставляем элементы занимать равную высоту */
+        margin: 20px 0; /* Отступ между секциями */
+    }
+
+    .text-container {
+        flex: 1; /* Занимает оставшееся место */
+        padding: 10px; /* Отступ внутри текстового контейнера */
+    }
+
+    .image-container {
+        flex: 1; /* Занимает оставшееся место */
+        padding: 10px; /* Отступ внутри контейнера изображения */
+        text-align: center; /* Выравнивание изображения по центру */
+    }
+
+    .image-container img {
+        max-width: 100%; /* Ограничение максимальной ширины изображения */
+        height: auto; /* Сохранение пропорций изображения */
+        object-fit: cover; /* Обеспечение заполнения контейнера без искажений */
+        max-height: 100%; /* Ограничиваем высоту картинки до высоты текстового контейнера */
+    }
+
+    /* Условие для разных размещений */
+    .content-section:nth-child(2) .text-container, 
+    .content-section:nth-child(2) .image-container {
+        order: 2; /* Изменение порядка размещения для второго варианта */
+    }
+
+    .content-section:nth-child(3) {
+        flex-direction: column; /* Вертикальное размещение для третьего варианта */
+    }
+
+    .content-section:nth-child(3) .image-container, 
+    .content-section:nth-child(3) .text-container {
+        order: 1; /* Изменение порядка размещения для третьего варианта */
+    }   
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <div class="header">
+        <img src="logo.png" alt="Логотип">
+        <h1>ДМ ГРУПП</h1>
+    </div>
+
+    <!-- Основной блок -->
+    <div class="content">
+        <div class="content-section">
+            <div class="text-container">
+                <h2>1. Аудит безопасности организаций по следующим направлениям:</h2>
+                <p>- кадровая безопасность;</p>
+                <p>- экономическая безопасность;</p>
+                <p>- юридическая безопасность;</p>
+                <p>- информационная безопасность;</p>
+                <p>- внутренняя безопасность (лояльность сотрудников к компании, соблюдение принципов конфиденциальности и т.д);</p>
+                <p>- внешние угрозы (предполагаемые и проводимые проверки надзирающих и контролирующих органов, угрозы со стороны недобросовестных конкурентов);</p>
+                <p>- пропускной режим;</p>
+                <p>- аудит Службы безопасности организации</p>
+            </div>
+            <div class="image-container">
+                <img src="File-page-001.jpg" >
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <!-- Подвал -->
+    <div class="footer">
+        <!-- Лого и контакты -->
+        <div class="footer-info">
+            <div class="contact-item">
+                <img src="whatsapp.png" alt="WhatsApp">
+                <span>+7 (900) 123-45-67</span>
+            </div>
+            <div class="contact-item">
+                <img src="whatsapp.png" alt="WhatsApp">
+                <span>+7 (900) 765-43-21</span>
+            </div>
+            <div class="contact-item">
+                <img src="email.png" alt="Email">
+                <span>info@uslugi.ru</span>
+            </div>
+            <div class="contact-item">
+                <img src="email.png" alt="Email">
+                <span>support@uslugi.ru</span>
+            </div>
+            <div class="contact-item">
+                <img src="email.png" alt="Email">
+                <span>sales@uslugi.ru</span>
+            </div>
+            <div class="contact-item">
+                <img src="website.png" alt="Website">
+                <span>www.uslugi.ru</span>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Подвал */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Контейнер с контактами */
+        .footer-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Каждый контактный элемент */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 20px;
+            min-width: 200px; /* минимальная ширина для хорошей адаптивности */
+        }
+
+        .contact-item img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Адаптивное поведение для маленьких экранов */
+        @media (max-width: 600px) {
+            .footer-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-item {
+                justify-content: center;
+                margin: 10px 0;
+            }
+        }
+    </style>
+
+</body>
+</html>
