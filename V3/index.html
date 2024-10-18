@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
         }
+
         /* Шапка */
         .header {
             position: fixed;
@@ -22,75 +23,73 @@
             padding: 10px 0;
             z-index: 1000;
         }
+
         .header img {
             height: 50px;
             vertical-align: middle;
         }
+
         .header h1 {
             display: inline-block;
             margin: 0;
             padding-left: 10px;
             font-size: 24px;
         }
+
         /* Основной блок */
         .content {
-            padding: 100px 20px; 
+            padding: 100px 20px;
             max-width: 800px;
             margin: 0 auto;
         }
-        /* Подвал */
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .footer img {
-            height: 30px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-        .footer div {
-            margin: 10px 0;
-        }
+
+        /* Блок контента */
         .content-section {
             display: flex;
-            align-items: stretch; 
-            margin: 2vh 0; 
+            align-items: stretch;
+            margin: 2vh 0;
         }
 
+        /* Левый/правый текст */
         .text-container {
-            flex: 1; 
-            padding: 1vh; 
+            flex: 1;
+            padding: 1vh;
         }
 
+        /* Левое/правое изображение */
         .image-container {
-            flex: 1; 
-            padding: 1vh; 
-            text-align: center; 
+            flex: 1;
+            padding: 1vh;
+            text-align: center;
         }
 
         .image-container img {
-            max-width: 100%; 
-            height: auto; 
-            object-fit: cover; 
-            max-height: 100%; 
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-height: 100%;
         }
 
-        
-        .content-section:nth-child(2) .text-container, 
-        .content-section:nth-child(2) .image-container {
-            order: 1; 
+        /* Для управления направлением изображения */
+        .row {
+            flex-direction: row;
         }
 
-        .content-section:nth-child(3) {
-            flex-direction: column; 
+        .row-reverse {
+            flex-direction: row-reverse;
         }
 
-        .content-section:nth-child(3) .image-container, 
-        .content-section:nth-child(3) .text-container {
-            order: 2; 
+        /* Вертикальное расположение для небольших экранов */
+        @media (max-width: 768px) {
+            .content-section {
+                flex-direction: column;
+            }
+
+            .image-container {
+                margin-top: 20px;
+            }
         }
+
     </style>
 </head>
 <body>
@@ -101,13 +100,12 @@
         <h1>ДМ ГРУПП</h1>
     </div>
 
-    <!-- Основной блок -->
-    
+    <!-- Основной блок с управляемым расположением изображения -->
+
     <div class="content">
 
-        
-
-        <div class="content-section">
+        <!-- Блок 1: картинка справа -->
+        <div class="content-section row">
             <div class="text-container">
                 <h2>1. Аудит безопасности организаций по следующим направлениям:</h2>
                 <p>- кадровая безопасность;</p>
@@ -120,35 +118,29 @@
                 <p>- аудит Службы безопасности организации</p>
             </div>
             <div class="image-container">
-                <img src="File-page-001.jpg" width="100%" height="100%">
+                <img src="File-page-001.jpg" alt="Изображение 1">
             </div>
         </div>
-        
-        <div class="content-section">
-            <div class="image-container">
-                <img src="File-page-002.jpg" width="100%" height="100%">
-            </div>
+
+        <!-- Блок 2: картинка слева -->
+        <div class="content-section row-reverse">
             <div class="text-container">
                 <h2>1.1 По результатам аудита:</h2>
                 <p>Подготовка заключения по результатам аудита. </p>
                 <p>В случае необходимости - подготовка рекомендаций по выявленным недостаткам и нарушениям, а также разработка регламентов и положений.</p>
-                <p></p>
+            </div>
+            <div class="image-container">
+                <img src="File-page-002.jpg" alt="Изображение 2">
             </div>
         </div>
 
-        <div class="content-section">
-            <div class="image-container">
-                <img src="File-page-007.jpg" width="100%" height="100%">
-            </div>
-            <div class="text-container">
-                <p>Текст третьего абзаца. </p>
-            </div>
-        </div>
+        <!-- Блоки 3-10: ты можешь настроить аналогично -->
+        <!-- Добавь для каждого блока свои изображения и текст -->
+
     </div>
 
-    <!-- Подвал -->
+<!-- Подвал -->
 <div class="footer">
-    <!-- Лого и контакты -->
     <div class="footer-info">
         <div class="contact-item">
             <img src="whatsapp.png" alt="WhatsApp">
@@ -190,7 +182,7 @@
     .footer-info {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
     }
 
     /* Каждый контактный элемент */
@@ -198,7 +190,7 @@
         display: flex;
         align-items: center;
         margin: 10px 20px;
-        min-width: 200px; 
+        min-width: 200px; /* Увеличиваем минимальную ширину, чтобы выровнять контент */
     }
 
     .contact-item img {
@@ -206,15 +198,35 @@
         margin-right: 10px;
     }
 
-    
-    @media (max-width: 600px) {
+    /* Для больших экранов */
+    @media (min-width: 769px) {
+        .footer-info {
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        /* Если текст не помещается в одну строку — переносим на две */
+        .footer-info {
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+    }
+
+    /* Для мобильных экранов (меньше 768px) */
+    @media (max-width: 768px) {
         .footer-info {
             flex-direction: column;
-            align-items: center;
+            align-items: center; /* Выровнять по правому краю */
+            padding-right: 20px; /* Регулируемый отступ */
         }
+
         .contact-item {
-            justify-content: center;
             margin: 10px 0;
+        }
+
+        /* Регулируем ширину элементов для правильного выравнивания */
+        .contact-item span {
+            text-align: center; /* Выравниваем текст по правому краю */
         }
     }
 </style>
