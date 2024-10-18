@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДМ ГРУПП</title>
+    <link rel="icon" type="image/svg+xml" href="logo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Шапка */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .header img {
+            height: 50px;
+            vertical-align: middle;
+        }
+        .header h1 {
+            display: inline-block;
+            margin: 0;
+            padding-left: 10px;
+            font-size: 24px;
+        }
+        /* Основной блок */
+        .content {
+            padding: 100px 20px; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* Подвал */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer img {
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .footer div {
+            margin: 10px 0;
+        }
+        .content-section {
+            display: flex;
+            align-items: stretch; 
+            margin: 2vh 0; 
+        }
+
+        .text-container {
+            flex: 1; 
+            padding: 1vh; 
+        }
+
+        .image-container {
+            flex: 1; 
+            padding: 1vh; 
+            text-align: center; 
+        }
+
+        .image-container img {
+            max-width: 100%; 
+            height: auto; 
+            object-fit: cover; 
+            max-height: 100%; 
+        }
+
+        
+        .content-section:nth-child(2) .text-container, 
+        .content-section:nth-child(2) .image-container {
+            order: 1; 
+        }
+
+        .content-section:nth-child(3) {
+            flex-direction: column; 
+        }
+
+        .content-section:nth-child(3) .image-container, 
+        .content-section:nth-child(3) .text-container {
+            order: 2; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <div class="header">
+        <img src="logo.png" alt="Логотип">
+        <h1>ДМ ГРУПП</h1>
+    </div>
+
+    <!-- Основной блок -->
+    
+    <div class="content">
+
+        
+
+        <div class="content-section">
+            <div class="text-container">
+                <h2>1. Аудит безопасности организаций по следующим направлениям:</h2>
+                <p>- кадровая безопасность;</p>
+                <p>- экономическая безопасность;</p>
+                <p>- юридическая безопасность;</p>
+                <p>- информационная безопасность;</p>
+                <p>- внутренняя безопасность (лояльность сотрудников к компании, соблюдение принципов конфиденциальности и т.д);</p>
+                <p>- внешние угрозы (предполагаемые и проводимые проверки надзирающих и контролирующих органов, угрозы со стороны недобросовестных конкурентов);</p>
+                <p>- пропускной режим;</p>
+                <p>- аудит Службы безопасности организации</p>
+            </div>
+            <div class="image-container">
+                <img src="File-page-001.jpg">
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <div class="image-container">
+                <img src="File-page-002.jpg">
+            </div>
+            <div class="text-container">
+                <h2>1.1 По результатам аудита:</h2>
+                <p>Подготовка заключения по результатам аудита. </p>
+                <p>В случае необходимости - подготовка рекомендаций по выявленным недостаткам и нарушениям, а также разработка регламентов и положений.</p>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="image-container">
+                <img src="File-page-007.jpg" alt="Описание изображения 3">
+            </div>
+            <div class="text-container">
+                <p>Текст третьего абзаца. </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+<div class="footer">
+    <!-- Лого и контакты -->
+    <div class="footer-info">
+        <div class="contact-item">
+            <img src="whatsapp.png" alt="WhatsApp">
+            <span>+7 (900) 123-45-67</span>
+        </div>
+        <div class="contact-item">
+            <img src="whatsapp.png" alt="WhatsApp">
+            <span>+7 (900) 765-43-21</span>
+        </div>
+        <div class="contact-item">
+            <img src="email.png" alt="Email">
+            <span>info@uslugi.ru</span>
+        </div>
+        <div class="contact-item">
+            <img src="email.png" alt="Email">
+            <span>support@uslugi.ru</span>
+        </div>
+        <div class="contact-item">
+            <img src="email.png" alt="Email">
+            <span>sales@uslugi.ru</span>
+        </div>
+        <div class="contact-item">
+            <img src="website.png" alt="Website">
+            <span>www.uslugi.ru</span>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Подвал */
+    .footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Контейнер с контактами */
+    .footer-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Каждый контактный элемент */
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin: 10px 20px;
+        min-width: 200px; 
+    }
+
+    .contact-item img {
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    
+    @media (max-width: 600px) {
+        .footer-info {
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-item {
+            justify-content: center;
+            margin: 10px 0;
+        }
+    }
+</style>
+
+
+</body>
+</html>
