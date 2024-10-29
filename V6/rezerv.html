@@ -1,0 +1,91 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .block img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .block-text {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .block img {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .block-vertical img {
+            margin: 0 auto;
+        }
+
+        /* Адаптивность для маленьких экранов */
+        @media (max-width: 768px) {
+            .block {
+                flex-direction: column;
+            }
+
+            .block img {
+                margin: 0;
+                margin-top: 20px;
+            }
+
+            .block.reverse {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="block">
+        <div class="block-text">
+            <h2>Текст слева</h2>
+            <p>Здесь находится текстовый блок, который будет отображаться слева от изображения на больших экранах.</p>
+        </div>
+        <img src="File-page-001.jpg" alt="Изображение справа">
+    </div>
+
+    <div class="block reverse">
+        <img src="File-page-002.jpg" alt="Изображение слева">
+        <div class="block-text">
+            <h2>Текст справа</h2>
+            <p>Здесь находится текстовый блок, который будет отображаться справа от изображения на больших экранах.</p>
+        </div>
+    </div>
+
+    <div class="block-vertical">
+        <img src="File-page-002.jpg" alt="Изображение сверху" style="width: 50%;">
+        <div class="block-text">
+            <h2>Текст снизу</h2>
+            <p>Здесь находится текстовый блок, который будет располагаться под изображением.</p>
+        </div>
+    </div>
+
+</body>
+</html>
